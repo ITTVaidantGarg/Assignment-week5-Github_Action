@@ -1,0 +1,33 @@
+
+name: .NET API Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: https://reqres.in/api
+      API_KEY: ${{ secrets.API_KEY }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj
+
+    - name: Build
+      run: dotnet build Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj --no-restore
+
+    - name: Run tests
+      run: dotnet test Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj --no-build --verbosity normal
