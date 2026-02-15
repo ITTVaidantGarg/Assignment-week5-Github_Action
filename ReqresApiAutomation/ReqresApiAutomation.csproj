@@ -32,13 +32,6 @@
     </Content>
   </ItemGroup>
 
-   <ItemGroup>
-		<None Include=".env">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-   </ItemGroup>
-
-
 	<ItemGroup>
     <None Update=".env">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
