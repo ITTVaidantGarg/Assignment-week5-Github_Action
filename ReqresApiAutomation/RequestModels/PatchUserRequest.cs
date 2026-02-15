@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ReqresApiAutomation.Models
+
+
+namespace ReqresApiAutomation.RequestModels
 {
-    internal class PatchUserRequest
+    public class PatchUserRequest
     {
+        public string? name { get; set; }
+        public string? job { get; set; }
     }
 }
