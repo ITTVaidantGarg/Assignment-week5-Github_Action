@@ -23,10 +23,11 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ReqresApiAutomation.sln
-
+      run: dotnet restore
+    
     - name: Build
-      run: dotnet build ReqresApiAutomation.sln --no-restore
-
+      run: dotnet build --no-restore
+    
     - name: Run tests
-      run: dotnet test ReqresApiAutomation.sln --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
+
