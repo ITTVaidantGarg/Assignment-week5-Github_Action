@@ -1,4 +1,3 @@
-
 name: .NET API Tests
 
 on:
@@ -24,10 +23,10 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj
+      run: dotnet restore ReqresApiAutomation.sln
 
     - name: Build
-      run: dotnet build Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj --no-restore
+      run: dotnet build ReqresApiAutomation.sln --no-restore
 
     - name: Run tests
-      run: dotnet test Assignment-week5-task1/ReqresApiAutomation/ReqresApiAutomation.csproj --no-build --verbosity normal
+      run: dotnet test ReqresApiAutomation.sln --no-build --verbosity normal
